@@ -1,8 +1,5 @@
 title: Joel Kores Blog
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: I am a full-stack software engineer, I bring a unique combination of passion, hard work, and skill to every project I tackle. With a strong foundation in both front-end and back-end technologies, I am able to design and develop complete, functional web applications from start to finish. My drive for excellence fuels my ability to quickly learn new technologies and tools, and my attention to detail ensures that each project is delivered to the highest standards. Whether working on a team or independently, I am always striving to find creative solutions to complex problems and to deliver exceptional results. My passion for technology and programming, combined with my commitment to delivering quality work, make me an asset to any organization.
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.k0r3s.me" # the base hostname & protocol for your site, e.g. http://example.com
