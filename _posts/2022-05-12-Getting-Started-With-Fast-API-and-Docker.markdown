@@ -1,15 +1,12 @@
 ---
 layout: post
 title: "Getting Started With Fast API and Docker"
-date: 2022-05-012 13:32:20 +0300
+date: 2022-05-12 13:32:20 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
-img: software.jpg # Add image post (optional)
+img: docker.jpg # Add image post (optional)
+tags: [Python, FastAPI, Software] # add tag
 ---
 
-# Getting Started With Fast API and Docker
-![](https://i.imgur.com/7MCgioK.jpg)
-
-# FASTAPI
 ## What is fastAPI
 FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints to validate, serialize, and deserialize data, and automatically auto-generate OpenAPI documents.
 

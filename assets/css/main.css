@@ -775,7 +775,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   color: #515151;
-  background-color: #fbfbfb;
+  background-color: #000000;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -933,7 +933,8 @@ table tfoot td {
   width: 240px;
   height: 100%;
   padding: 20px 10px;
-  background-color: #ffffff;
+  background-color: #161616f6;
+  color: white;
 }
 
 .about {
@@ -948,7 +949,7 @@ table tfoot td {
   -webkit-border-radius: 100%;
           border-radius: 100%;
   overflow: hidden;
-  background-color: #333030;
+  background-color: #cfc3c3;
 }
 
 .about img {
@@ -975,7 +976,7 @@ table tfoot td {
   padding-bottom: 15px;
   font-size: 16px;
   text-transform: uppercase;
-  color: #333030;
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -992,7 +993,7 @@ table tfoot td {
   height: 7px;
   -webkit-border-radius: 100%;
           border-radius: 100%;
-  background-color: #515151;
+  background-color: #ffffff;
 }
 
 .about p {
@@ -1023,7 +1024,7 @@ table tfoot td {
 
 .contact .contact-title {
   position: relative;
-  color: #333030;
+  color: #ffffff;
   font-weight: 400;
   font-size: 12px;
   margin: 0 0 5px;
@@ -1043,7 +1044,7 @@ table tfoot td {
   position: absolute;
   top: 50%;
   left: 0;
-  background-color: #515151;
+  background-color: #ffffff;
 }
 
 .contact .contact-title::after {
@@ -1058,7 +1059,7 @@ table tfoot td {
   position: absolute;
   top: 50%;
   right: 0;
-  background-color: #515151;
+  background-color: #ffffff;
 }
 
 .contact ul {
@@ -1078,7 +1079,7 @@ table tfoot td {
 }
 
 .contact ul li a {
-  color: #515151;
+  color: #ffffff;
   display: block;
   padding: 5px;
   font-size: 18px;
@@ -1088,7 +1089,7 @@ table tfoot td {
 }
 
 .contact ul li a:hover {
-  color: #333030;
+  color: #c4c4c4;
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
@@ -1124,8 +1125,9 @@ footer .copyright {
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
-  -webkit-box-shadow: 0 1px 1px 0 rgba(31, 35, 46, 0.15);
+  -webkit-box-shadow: 0 1px 1px 0 rgba(46, 33, 31, 0.15);
           box-shadow: 0 1px 1px 0 rgba(31, 35, 46, 0.15);
+  background-color: #1d1c1c;
 }
 
 .post:hover {
@@ -1148,11 +1150,13 @@ footer .copyright {
 .post .post-content {
   padding: 1rem;
   width: 70%;
+  color: rgb(238, 236, 236);
 }
 
 .post .post-content .post-date,
 .post .post-content .post-words {
   font-size: 12px;
+  color: green;
 }
 
 .post .post-content .post-title {
@@ -1164,7 +1168,7 @@ footer .copyright {
 .post .post-content .post-title a {
   font-family: 'PT Serif', serif;
   text-decoration: none;
-  color: #263959;
+  color: #829ece;
 }
 
 .post .post-content p {
@@ -1174,7 +1178,7 @@ footer .copyright {
 a.older-posts, a.newer-posts {
   font-size: 18px;
   display: inline-block;
-  color: #515151;
+  color: #f8f2f2;
   -webkit-transition: -webkit-transform .2s;
   transition: -webkit-transform .2s;
   -o-transition: transform .2s;
@@ -1197,6 +1201,8 @@ a.newer-posts:hover {
 /* - - - - - - - - - - Post Page Styles - - - - - - - - - - */
 .wrap-content {
   padding: 20px;
+  background-color: #222222;
+  color: rgb(180, 180, 180);
 }
 
 .header-page {
@@ -1208,6 +1214,7 @@ a.newer-posts:hover {
   font-weight: 400;
   margin: 0 0 10px;
   line-height: 1.3;
+  background-color: #222222;
 }
 
 .header-page .page-date {
@@ -1215,6 +1222,7 @@ a.newer-posts:hover {
   font-weight: 300;
   font-size: 12px;
   text-transform: uppercase;
+  background-color: #222222;
 }
 
 .page-cover-image {
@@ -1222,13 +1230,35 @@ a.newer-posts:hover {
   padding: 0;
   margin: 0;
   max-height: 500px;
-  background-color: #fafafa;
+  background-color: #222222;
   overflow: hidden;
+}
+
+.language-plaintext highlighter-rouge{
+background-color: #ece7e7;
+}
+
+.highlighter-rouge {
+  color: #22b904;
+  font-weight: 400;
+  border: 1px solid #0a4703;
+  -webkit-border-radius: 3px;
+  border-radius: 1px;
+  padding: 0.1rem 0.5rem;
+}
+
+.highlight {
+  background-color: #000000;
 }
 
 .page-cover-image figure {
   position: relative;
   margin: 0;
+  background-color: #222222;
+}
+
+a {
+  color: #09f;
 }
 
 .page-cover-image figcaption {
@@ -1236,16 +1266,18 @@ a.newer-posts:hover {
   top: 20px;
   right: 20px;
   padding-left: 20px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(2, 2, 2, 0.7);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   font-weight: 700;
   text-transform: uppercase;
   font-size: 10px;
+  background-color: #222222;
 }
 
 .page-cover-image .page-image {
   width: 100%;
   height: 100%;
+  background-color: #000000;
 }
 
 .page-footer {
