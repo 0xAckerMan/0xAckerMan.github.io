@@ -7,7 +7,7 @@ img: secret-htb.png # Add image post (optional)
 tags: [boxes, boot2root, Hackthebox] # add tag
 ---
 
-
+## ENUMARATION
 ### nmap scan
 ```bash
 ┌─[r00t@parrot]─[~/Downloads/htb/secret]
