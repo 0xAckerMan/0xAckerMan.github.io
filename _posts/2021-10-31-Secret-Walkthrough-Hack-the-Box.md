@@ -56,7 +56,9 @@ we can see we have three ports open: 22, 80, 3000.
 It seems like the webserver runs from a node js application. But also, it seems like ports 80 and 3000 are running the same header.
 
 Since port 80 runs HTTP, we must have a webpage. i looked at it and we were prompted with this page.
+
 ![](https://i.imgur.com/ik7G0H8.png)
+
 nothing seemed interesting apart from the download button at the bottom.
 We also get the same result with port 3000
 
@@ -177,6 +179,7 @@ module.exports.registerValidation = registerValidation
 module.exports.loginValidation = loginValidation
 ```
 Also if we can remember, in the website on the API documentation, we had a register user module
+
 ![](https://i.imgur.com/KLPEgAy.png)
 
 With all this info in place, we can come up with an attack plan that will enable us to get an RCE to the machine.
@@ -185,7 +188,9 @@ our attack plan will be:
 * Modify the JWT to be the admin
 * Access restricted endpoints
 These restricted endpoints, are specified in the API documentation eg the ```/api/priv``` route, which when we try accessing, we get ```Access denied```
+
 ![](https://i.imgur.com/Olux1c4.png)
+
 ## Abusing the API
 ### Creating a new user.
 Looking at the documentation under the user registration, we can see that the user email must contain ```@dasith.works``` to be valid.
@@ -224,6 +229,7 @@ ETag: W/"d8-1FM8RUhJqjPvSAQlmqBbGwRLvlI"
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWJkYmQ2N2RiZGE1MjA0NjgwNDFiNzIiLCJuYW1lIjoidGVzdHVzZXIiLCJlbWFpbCI6InRlc3R1c2VyQGRhc2l0aC53b3JrcyIsImlhdCI6MTYzOTgyNTgxMn0.SL6SIE1fbWwu7i1Py0aCHCwZESwQvofoyg6SoeoflsI
 ```
 Now as you can see, we are successfully logged in. So let us take our jwt and try decoding it using [jwt.io](https://jwt.io/).
+
 ![](https://i.imgur.com/UJhkGj6.png)
 
 So I decided to use the ```none``` alg technique. I tried with ```none```, ```NONE``` and ```None``` but they didn't seem to work.
@@ -300,7 +306,9 @@ This was successful since it dumped all the info we wanted. Now it's time to uti
 ### Exploitation
 We can generate a new ssh key which we will use to login into the machine and avoid using our main ssh key.
 ```ssh-keygen -t rsa -b 4096 -C 'drt@htb' -f secret.htb -P ''```
+
 ![](https://i.imgur.com/2lST9RU.png)
+
 As we can see, in my case I had another key that I have overwritten. This was created when I first tried solving this machine.
 The command generates a new SSH public and private key in the current directory named secret.htb.
 
@@ -311,11 +319,15 @@ To ensure that the public key is added, we can use these commands in a root shel
 Now we can store the content of our public key in a variable for easy adding.
 ```export PUBLIC_KEY=$(cat secret.htb.pub)```
 So now we can execute our last curl command to add our keys to the server for easy SSH.
+
 ![](https://i.imgur.com/WCN3P0c.png)
+
 We received a 200 OK, meaning it worked. Yaay
 ### Gaining user
 Now we can SSH to the machine and get that user hash
+
 ![](https://i.imgur.com/woKANty.png)
+
 Now it's time to root this machine.
 
 ### Privilege Escalation
@@ -332,17 +344,24 @@ drwxr-xr-x 20 root root 4096 Oct 7 15:01 ..
 -rw-r--r-- 1 root root 4622 Oct 7 10:04 valgrind.log
 ```
 Looking at the binary with some dynamic analysis, we see that when run, it asks for a directory name and displays the content in it. So I provided it with /root/root.txt as shown below
+
 ![](https://i.imgur.com/5DnBoB7.png)
 
 I decide to crash the program and try to read the crash file which most of the time is saved in /var/crash in Linux distro. May it will display the content of the file in /root/root.txt.Reference [here](https://linux-audit.com/understand-and-configure-core-dumps-work-on-linux/). Let's GO!!!
+
 ![](https://i.imgur.com/zTZS8Zu.png)
 
 It's now time we look at the /var/crash dir and see what we got.
 we use the ```apport-unpack``` command to unpack and dump the content of the crash file in the /tmp/crash-report directory.
+
 ![](https://i.imgur.com/5hmwpJQ.png)
+
 ### Getting root
 We can use strings to see the contents in CoreDump where we believe that our root hash is. Taking a close look, we find our root hash in the strings results. I'll exclude it in the screenshot.
+
 ![](https://i.imgur.com/I8QWrvO.png)
+
 we submit the hash and 
+
 ![](https://i.imgur.com/uKOK48b.png)
 yaay!!!
