@@ -2,7 +2,7 @@
 layout: post
 title: "Pwnable.kr BOF Walkthrough"
 date: 2022-02-01 18:32:20 +0300
-description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+description: This challenge, as its name bof, focuses on exploiting buffer overflow by overwriting a variable then gain a shell # Add post description (optional)
 img: bof.png # Add image post (optional)
 tags: [BOF, PWN, binaryExploit, pwnable.kr] # add tag
 ---
