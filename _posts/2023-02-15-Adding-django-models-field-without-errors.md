@@ -68,7 +68,6 @@ Code:
 # The new field
 item4 = models.CharField(max_length=100, null=True)
 ```
-
 This fixes the error. You can now ```makemigrations``` and ```migrate``` successfully.
 
 2. **Adding ```default=''``` to the field**
