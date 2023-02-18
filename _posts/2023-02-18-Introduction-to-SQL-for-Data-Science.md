@@ -7,8 +7,6 @@ img: Sql_data_base_with_logo.png # Add image post (optional)
 tags: [Data-Science, SQL, Programming] # add tag
 ---
 
-# Introduction to SQL for Data Science
-
 **Structured Query Language (SQL)** is a programming language that is used to manage relational databases. SQL is used in many industries, including healthcare, finance, e-commerce, and more. In this article, we will introduce SQL and explore its applications in data science.
 
 
