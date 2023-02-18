@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction to SQL for Data Science
+title: "SQL 101: Introduction to SQL for Data Analysis"
 date: 2023-02-18 13:32:20 +0300
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: Sql_data_base_with_logo.png # Add image post (optional)
